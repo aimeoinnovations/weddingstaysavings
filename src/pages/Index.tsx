@@ -6,10 +6,10 @@ import SectionHeading from "@/components/SectionHeading";
 import heroImg from "@/assets/hero-wedding.jpg";
 
 const stats = [
+  { value: "400+", label: "Happy Customers" },
+  { value: "₹12.5 Cr+", label: "Total Savings Delivered" },
   { value: "2,500+", label: "Hotels in India" },
   { value: "600+", label: "Hotels Abroad" },
-  { value: "10–40%", label: "Typical Savings" },
-  { value: "4★/5★", label: "Hotels Only" },
 ];
 
 const services = [

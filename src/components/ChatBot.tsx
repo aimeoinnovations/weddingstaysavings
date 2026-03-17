@@ -36,8 +36,10 @@ const ChatBot = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hasTriggered) {
-        setShowPulse(true);
         setHasTriggered(true);
+        // Auto-open chat with first question
+        setIsOpen(true);
+        setMessages([{ from: "bot", text: questions[0].text }]);
         // Play a subtle notification sound
         try {
           const ctx = new AudioContext();
