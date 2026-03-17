@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Hotel, Star, Shield, BadgePercent, Users, MapPin } from "lucide-react";
+import { ArrowRight, Hotel, Star, Shield, BadgePercent, Users, MapPin, CheckCircle, Clock, ThumbsUp, Handshake } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import heroImg from "@/assets/hero-wedding.jpg";
 
 const stats = [
+  { value: "400+", label: "Happy Customers" },
+  { value: "₹12.5 Cr+", label: "Total Savings Delivered" },
   { value: "2,500+", label: "Hotels in India" },
   { value: "600+", label: "Hotels Abroad" },
-  { value: "10–40%", label: "Typical Savings" },
-  { value: "4★/5★", label: "Hotels Only" },
 ];
 
 const services = [
@@ -25,6 +25,13 @@ const howItWorks = [
   { step: "01", title: "Share Your Quote", desc: "Send us the hotel quote you've received for wedding rooms or banquets." },
   { step: "02", title: "We Negotiate", desc: "We leverage our contracts with 2,500+ hotels to get you a significantly lower rate." },
   { step: "03", title: "You Save", desc: "Accept the lower rate, save 10–40%, and pay a small success fee. That's it." },
+];
+
+const whyUs = [
+  { icon: CheckCircle, title: "Guaranteed Savings or No Fee", desc: "We benchmark against your existing hotel quote. If we can't beat it, you pay nothing." },
+  { icon: Handshake, title: "Success-Based Pricing", desc: "Our fee is only a fraction of what we save you — we earn only when you benefit." },
+  { icon: Clock, title: "Since 2024, 400+ Happy Families", desc: "Trusted by 400+ wedding families with over ₹12.5 Cr in total savings delivered." },
+  { icon: ThumbsUp, title: "End-to-End Hotel Coordination", desc: "From negotiation to final booking confirmation, we handle all hotel communication for you." },
 ];
 
 const Index = () => {
@@ -135,7 +142,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Why Us */}
+      <section className="py-20 md:py-28 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            badge="Why Shaadistays"
+            title="Why Families Trust Us"
+            subtitle="Founded in 2024, we've already helped 400+ families save over ₹12.5 Crore on wedding hotel costs."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {whyUs.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex gap-4 p-6 rounded-2xl bg-background border border-border"
+              >
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center shrink-0">
+                  <item.icon size={24} className="text-gold-dark" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-semibold text-foreground">{item.title}</h3>
+                  <p className="mt-1 text-muted-foreground font-body text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 md:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
