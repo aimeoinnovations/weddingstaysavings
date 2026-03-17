@@ -27,6 +27,13 @@ const howItWorks = [
   { step: "03", title: "You Save", desc: "Accept the lower rate, save 10–40%, and pay a small success fee. That's it." },
 ];
 
+const whyUs = [
+  { icon: CheckCircle, title: "Guaranteed Savings or No Fee", desc: "We benchmark against your existing hotel quote. If we can't beat it, you pay nothing." },
+  { icon: Handshake, title: "Success-Based Pricing", desc: "Our fee is only a fraction of what we save you — we earn only when you benefit." },
+  { icon: Clock, title: "Since 2024, 400+ Happy Families", desc: "Trusted by 400+ wedding families with over ₹12.5 Cr in total savings delivered." },
+  { icon: ThumbsUp, title: "End-to-End Hotel Coordination", desc: "From negotiation to final booking confirmation, we handle all hotel communication for you." },
+];
+
 const Index = () => {
   return (
     <Layout>
