@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Hotel, Star, Shield, BadgePercent, Users, MapPin } from "lucide-react";
+import { ArrowRight, Hotel, Star, Shield, BadgePercent, Users, MapPin, CheckCircle, Clock, ThumbsUp, Handshake } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import heroImg from "@/assets/hero-wedding.jpg";
