@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — ShaadiStays</title>
+  <meta name="description" content="Contact ShaadiStays to get a free hotel quote negotiation for your wedding. Share your quote and save 10–40%." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .req-star { color: var(--gold-dark); }
+
+    /* Checkbox */
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      cursor: pointer;
+      font-size: 0.9375rem;
+      color: var(--fg);
+      user-select: none;
+    }
+    .checkbox-label input[type="checkbox"] { display: none; }
+    .checkbox-box {
+      width: 20px; height: 20px; flex-shrink: 0;
+      border: 2px solid var(--border);
+      border-radius: 5px;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .checkbox-label input[type="checkbox"]:checked + .checkbox-box {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .checkbox-label input[type="checkbox"]:checked + .checkbox-box::after {
+      content: '';
+      display: block;
+      width: 5px; height: 9px;
+      border: 2px solid #fff;
+      border-top: none; border-left: none;
+      transform: rotate(45deg) translateY(-1px);
+    }
+
+    /* Validation error state */
+    .form-group input.invalid { border-color: hsl(0, 70%, 55%); }
+    .error-msg {
+      font-size: 0.75rem;
+      color: hsl(0, 65%, 50%);
+      margin-top: 0.25rem;
+      display: none;
+    }
+    .error-msg.show { display: block; }
+
+    /* Quote reminder banner */
+    .quote-reminder {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.875rem 1rem;
+      background: hsl(38, 65%, 55%, 0.08);
+      border: 1px solid hsl(38, 65%, 55%, 0.25);
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+    }
+    .quote-reminder svg {
+      width: 18px; height: 18px; flex-shrink: 0;
+      fill: none; stroke: var(--gold-dark);
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      margin-top: 1px;
+    }
+    .quote-reminder p {
+      font-size: 0.8125rem;
+      color: var(--fg);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .quote-reminder strong { color: var(--gold-dark); }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact ShaadiStays",
+  "url": "https://www.shaadistays.com/contact.html",
+  "description": "Get in touch with ShaadiStays to save 10–40% on your wedding hotel costs. Share your hotel quote and we will respond within 24 hours.",
+  "mainEntity": {
+    "@id": "https://www.shaadistays.com/#business"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">Shaadi<span>Stays</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <a href="contact.html" class="btn-quote">Get a Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="btn-quote-mobile">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="py-20 bg-hero-pattern page-top-pad">
+  <div class="container">
+    <div class="section-heading fade-in">
+      <span class="section-badge">Contact</span>
+      <h2>Let's Save You Money</h2>
+      <p>Share your hotel quote and wedding details. We'll get back to you within 24 hours with a better rate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="py-20">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+      <div class="contact-info fade-in">
+        <h3>Get in Touch</h3>
+        <p>Prefer WhatsApp? Most of our clients do! Tap the button below or fill out the form and we'll redirect you.</p>
+        <a href="https://wa.me/918979636730?text=Hi%20ShaadiStays!%20I%20need%20help%20with%20wedding%20hotel%20booking." target="_blank" rel="noopener" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Chat on WhatsApp
+        </a>
+
+        <div class="contact-links">
+          <a href="tel:+918979636730" class="contact-link">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="lbl">Call Us</div>
+              <div class="val">+91 89796 36730</div>
+            </div>
+          </a>
+          <a href="mailto:aimeoglobal@gmail.com" class="contact-link">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="lbl">Email</div>
+              <div class="val">hello@shaadistays.com</div>
+            </div>
+          </a>
+          <a href="https://instagram.com/shaadistays" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <div class="lbl">Instagram</div>
+              <div class="val">@shaadistays</div>
+            </div>
+          </a>
+          <div class="contact-link">
+            <div class="contact-link-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="lbl">Based In</div>
+              <div class="val">India — serving nationwide &amp; abroad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="fade-in" style="transition-delay:0.15s">
+        <div class="contact-form" id="form-container">
+          <form id="contact-form" novalidate>
+
+            <!-- Row 1: Name + Phone -->
+            <div class="form-row" style="margin-bottom:1.25rem">
+              <div class="form-group">
+                <label for="f-name">Your Name</label>
+                <input type="text" id="f-name" placeholder="Full name" />
+              </div>
+              <div class="form-group">
+                <label for="f-phone">WhatsApp Number <span class="req-star">*</span></label>
+                <input type="tel" id="f-phone" required placeholder="+91 XXXXX XXXXX" />
+                <span class="error-msg" id="err-phone"></span>
+              </div>
+            </div>
+
+            <!-- Row 2: Hotel + Rooms -->
+            <div class="form-row" style="margin-bottom:1.25rem">
+              <div class="form-group">
+                <label for="f-hotel">Hotel Name <span class="req-star">*</span></label>
+                <input type="text" id="f-hotel" required placeholder="e.g., Taj Palace, Delhi" />
+                <span class="error-msg" id="err-hotel"></span>
+              </div>
+              <div class="form-group">
+                <label for="f-rooms">No. of Rooms</label>
+                <input type="number" id="f-rooms" min="1" placeholder="e.g., 50" />
+              </div>
+            </div>
+
+            <!-- Row 3: Days + Wedding Date -->
+            <div class="form-row" style="margin-bottom:1.25rem">
+              <div class="form-group">
+                <label for="f-days">No. of Days</label>
+                <input type="number" id="f-days" min="1" placeholder="e.g., 3" />
+              </div>
+              <div class="form-group">
+                <label for="f-date">Wedding Date <span class="req-star">*</span></label>
+                <input type="date" id="f-date" required />
+                <span class="error-msg" id="err-date"></span>
+              </div>
+            </div>
+
+            <!-- F&B checkbox -->
+            <div class="form-group" style="margin-bottom:1.25rem">
+              <label class="checkbox-label">
+                <input type="checkbox" id="f-fnb" />
+                <span class="checkbox-box"></span>
+                F&amp;B / Banquet negotiation required
+              </label>
+            </div>
+
+            <!-- Additional details -->
+            <div class="form-group" style="margin-bottom:1.25rem">
+              <label for="f-message">Additional Details</label>
+              <textarea id="f-message" rows="3" placeholder="Any other requirements or context..."></textarea>
+            </div>
+
+            <!-- Quote attachment reminder -->
+            <div class="quote-reminder">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <p><strong>Please attach your hotel quote</strong> in the WhatsApp chat once it opens — a screenshot of your WhatsApp/email quote or a PDF quote. <em>Only verifiable quotes accepted.</em></p>
+            </div>
+
+            <p style="font-size:0.75rem; color:var(--muted-fg); margin-bottom:0.75rem;">By submitting, you agree to our <a href="privacy-policy.html" style="color:var(--gold-dark);">Privacy Policy</a> and <a href="terms.html" style="color:var(--gold-dark);">Terms &amp; Conditions</a>.</p>
+
+            <button type="submit" class="form-submit">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Send via WhatsApp
+            </button>
+          </form>
+        </div>
+
+        <!-- Success state -->
+        <div class="contact-form form-success" id="form-success" style="display:none">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>WhatsApp is opening!</h3>
+          <p>Your details are pre-filled in the message. <strong>Please attach your hotel quote</strong> (screenshot or PDF) in the same chat before hitting Send.</p>
+          <p style="margin-top:0.75rem; font-size:0.8125rem; color:var(--muted-fg);">Our team will respond within 24 hours once we receive your quote.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Shaadi<span>Stays</span></div>
+        <p>India's specialist wedding hospitality consultant. We negotiate better hotel rates for your wedding guests so you can focus on celebrating.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/shaadistays" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="mailto:aimeoglobal@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="tel:+918979636730" aria-label="Phone">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <p>Wedding Room Blocks</p>
+        <p>Banquet F&amp;B Packages</p>
+        <p>Destination Weddings</p>
+        <p>Hotel Contracting</p>
+        <p>Booking Coordination</p>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <p style="margin-top:1rem; font-size:0.75rem;">A unit of Aimeo Innovations<br>Delhi NCR</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year"></span> ShaadiStays. All rights reserved. &nbsp;·&nbsp; <a href="privacy-policy.html" style="color:inherit;text-decoration:underline;opacity:0.7">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html" style="color:inherit;text-decoration:underline;opacity:0.7">Terms</a></p>
+      <p>Made with <span class="heart">♥</span> for Indian weddings</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CHATBOT -->
+<button class="chat-trigger" id="chat-trigger" aria-label="Open chat">
+  <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+<div class="chat-window hidden" id="chat-window">
+  <div class="chat-header">
+    <div class="chat-header-info"><p>ShaadiStays</p><p>Wedding Hotel Expert</p></div>
+    <button class="chat-close" id="chat-close" aria-label="Close chat">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-footer" id="chat-footer"></div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+/* ---- Contact form → WhatsApp ---- */
+(function () {
+  var form    = document.getElementById('contact-form');
+  var success = document.getElementById('form-success');
+  if (!form) return;
+
+  function setError(inputId, errId, msg) {
+    var el  = document.getElementById(inputId);
+    var err = document.getElementById(errId);
+    if (el)  el.classList.add('invalid');
+    if (err) { err.textContent = msg; err.classList.add('show'); }
+  }
+  function clearError(inputId, errId) {
+    var el  = document.getElementById(inputId);
+    var err = document.getElementById(errId);
+    if (el)  el.classList.remove('invalid');
+    if (err) err.classList.remove('show');
+  }
+
+  /* Clear on input */
+  document.getElementById('f-phone').addEventListener('input', function () { clearError('f-phone', 'err-phone'); });
+  document.getElementById('f-hotel').addEventListener('input', function () { clearError('f-hotel', 'err-hotel'); });
+  document.getElementById('f-date').addEventListener('change', function () { clearError('f-date',  'err-date');  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var phone   = document.getElementById('f-phone').value.trim();
+    var hotel   = document.getElementById('f-hotel').value.trim();
+    var date    = document.getElementById('f-date').value;
+    var name    = document.getElementById('f-name').value.trim();
+    var rooms   = document.getElementById('f-rooms').value.trim();
+    var days    = document.getElementById('f-days').value.trim();
+    var fnb     = document.getElementById('f-fnb').checked;
+    var message = document.getElementById('f-message').value.trim();
+
+    /* Validate */
+    var valid = true;
+    if (!phone) { setError('f-phone', 'err-phone', 'WhatsApp number is required'); valid = false; }
+    if (!hotel) { setError('f-hotel', 'err-hotel', 'Hotel name is required');       valid = false; }
+    if (!date)  { setError('f-date',  'err-date',  'Wedding date is required');     valid = false; }
+    if (!valid) return;
+
+    /* Format date */
+    var displayDate = date;
+    try {
+      var d = new Date(date + 'T00:00:00');
+      displayDate = d.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+    } catch (err) {}
+
+    /* Build WhatsApp message */
+    var lines = [
+      'Hi ShaadiStays! I\'d like to get a better hotel rate for my wedding.',
+      '',
+      '📋 *My Booking Details:*',
+    ];
+    if (name)  lines.push('👤 Name: ' + name);
+    lines.push('📱 WhatsApp: ' + phone);
+    lines.push('🏨 Hotel: ' + hotel);
+    if (rooms) lines.push('🛏 No. of Rooms: ' + rooms);
+    if (days)  lines.push('📅 No. of Days: ' + days);
+    lines.push('💍 Wedding Date: ' + displayDate);
+    lines.push('🍽 F&B / Banquet Required: ' + (fnb ? 'Yes' : 'No'));
+    if (message) lines.push('📝 Additional Details: ' + message);
+    lines.push('');
+    lines.push('📎 *(Attaching my hotel quote in this chat)*');
+
+    var text = lines.join('\n');
+    window.open('https://wa.me/918979636730?text=' + encodeURIComponent(text), '_blank');
+
+    document.getElementById('form-container').style.display = 'none';
+    success.style.display = 'block';
+  });
+})();
+</script>
+</body>
+</html>
